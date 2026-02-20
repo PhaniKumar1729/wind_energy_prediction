@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wind Power Prediction</title>
+    <style>
+        body { font-family: Arial; padding: 40px; }
+        input { margin: 5px; padding: 8px; width: 200px; }
+        button { padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Wind Turbine Power Prediction</h2>
+
+<form method="POST" action="/predict">
+
+    <input name="temperature" placeholder="Temperature"><br>
+    <input name="humidity" placeholder="Humidity"><br>
+    <input name="dewpoint" placeholder="Dew Point"><br>
+    <input name="ws10" placeholder="Wind Speed 10m"><br>
+    <input name="ws100" placeholder="Wind Speed 100m"><br>
+    <input name="gust" placeholder="Wind Gust"><br>
+    <input name="wd10" placeholder="Wind Direction 10m"><br>
+    <input name="wd100" placeholder="Wind Direction 100m"><br>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if result %}
+<h3>Predicted Power Output: {{ result }}</h3>
+{% endif %}
+
+</body>
+</html>
